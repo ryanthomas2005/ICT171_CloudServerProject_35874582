@@ -308,3 +308,49 @@ sudo systemctl status certbot.timer
 
 ---  
 
+## Final Verification & Testing :
+
+### Verify Apache  
+
+sudo systemctl status apache2  
+
+### Verify Files in Web Root  
+
+ls -l /var/www/html/  
+
+### Browser Checks  
+
+Test all access methods:  
+- `http://51.103.214.199`   
+- `https://bricktopiabybonztomz.com`  
+- `www.bricktopiabybonztomz.com`
+
+### Screenshot References:  
+
+**Website Test Page 1:**
+<img width="2876" height="1522" alt="TestSite1" src="https://github.com/user-attachments/assets/0725877a-9b4e-4b9e-becc-404bec146b5f" />  
+
+*Testing one of the website pages to verify all content loads correctly*
+
+**Website Test Page 2:**  
+<img width="2880" height="1522" alt="TestSite2" src="https://github.com/user-attachments/assets/620d2c23-0f42-4aba-b412-48404e7fdadb" />  
+
+*Testing another page to ensure navigation and links work properly across the site*
+
+**URL Website Test 1:**  
+<img width="2880" height="1438" alt="image" src="https://github.com/user-attachments/assets/b842e791-73cb-44b3-b9c3-be8c986dc379" />  
+
+*Testing http://51.103.214.199 works.*  
+
+**URL Website Test 2:**  
+<img width="2880" height="1430" alt="image" src="https://github.com/user-attachments/assets/40f4855d-b8a0-4578-ace7-10ad1874633d" />  
+
+*Testing https://bricktopiabybonztomz.com works.*  
+
+**URL Website Test 3:**  
+<img width="2879" height="1434" alt="image" src="https://github.com/user-attachments/assets/ba240276-67b8-4de9-a0af-6988484102f2" />  
+
+*Testing www.bricktopiabybonztomz.com works.* 
+---
+
+**Project Completed.**
