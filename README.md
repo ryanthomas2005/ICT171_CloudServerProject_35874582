@@ -55,16 +55,44 @@ Ensure you have:
   - Browser for testing
 - **Domain purchased**
 
-### Screenshot References::  
+### Screenshot References:  
 
-**Domain Purchase Page:**
-<img width="1812" height="390" alt="BuyDomain" src="https://github.com/user-attachments/assets/9f778c2b-c75f-4479-8f69-c6b20c81c323" />
-
+**Domain Purchase Page:**  
+<img width="1812" height="390" alt="BuyDomain" src="https://github.com/user-attachments/assets/2000b6d4-6c96-4446-9c6f-b82565dd098e" />  
 *Screenshot showing domain ready to purchase on Namecheap*
 
 **Domain Purchase Confirmation:**
-<img width="1156" height="1050" alt="DomainBought" src="https://github.com/user-attachments/assets/93b56740-bb61-41bf-af45-a4aba2bcb62e" />
+<img width="1156" height="1050" alt="DomainBought" src="https://github.com/user-attachments/assets/fe1c1dfa-1632-45d6-9fee-9b0905c762f6" />  
+*Receipt showing domain purchased - With Promocode it became cheaper.*  
 
-*Confirmation page showing successful domain purchase*
+---  
+
+## Phase 1 – Azure VM Setup:  
+
+### Steps
+
+1. Log into Azure portal
+2. Create a **new Ubuntu VM**:
+   - VM Name: `BricktopiaVM`
+   - OS: Ubuntu 22.04 LTS
+   - Size: B1s (for cost saving)
+3. Configure **Network Security Group (NSG)** to allow:
+   - SSH (port 22)
+   - HTTP (port 80)
+   - HTTPS (port 443)
+
+### Screenshot References:  
+
+**Azure VM Overview:**  
+<img width="2880" height="1346" alt="VM-OverviewPage" src="https://github.com/user-attachments/assets/cfa25fa5-4b53-479c-a89d-0d13b0e5c26c" />  
+*Azure portal showing BricktopiaVM overview with running status and configuration details*  
+
+**Creation of Port Rules in NSG**  
+
+<img width="2879" height="1432" alt="image" src="https://github.com/user-attachments/assets/6b751d9c-da8d-44d6-bfa0-c6daf6b5e64e" />  
+
+**SSH Connection Established:**
+<img width="2328" height="1206" alt="SSH-SessionPowerShell" src="https://github.com/user-attachments/assets/8e4ea35f-4c0b-47d2-9977-eacdabab2507" />  
+*PowerShell terminal showing successful SSH connection to Ubuntu VM*
 
 ---
