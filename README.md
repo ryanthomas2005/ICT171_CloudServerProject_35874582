@@ -95,4 +95,143 @@ Ensure you have:
 <img width="2328" height="1206" alt="SSH-SessionPowerShell" src="https://github.com/user-attachments/assets/8e4ea35f-4c0b-47d2-9977-eacdabab2507" />  
 *PowerShell terminal showing successful SSH connection to Ubuntu VM*
 
+---  
+
+
+## Phase 2 – Connect to VM and Update System:
+
+### Connect via SSH (PowerShell on Windows)  
+
+ssh ryan@51.103.214.199  
+
+Once entered, you will see that you're inside the Ubuntu VM in PowerShell:  
+
+ryan@BricktopiaVM:~$  
+
+  
+### Update System  
+
+sudo apt update
+sudo apt upgrade -y  
+
+**System Update Completed:**
+<img width="2308" height="1218" alt="SudoAPTUpdateAndUpgrade" src="https://github.com/user-attachments/assets/077347e2-f5c9-486e-a477-aafa385fa96c" />  
+I have done it before so I have nothing left to upgrade, install, remove.  
+
+*Terminal output shows successful apt update and upgrade completion, ensuring system is up-to-date and ready for Apache installation*  
+
+---
+
+## Install Apache:  
+
+### Installation Commands  
+  
+sudo apt install apache2 -y  
+sudo systemctl enable apache2  
+sudo systemctl start apache2  
+
+### Verify Apache is Running  
+  
+sudo systemctl status apache2   
+
+Then test if the website works with public IP in the web browser.
+
+### Screenshot References: 
+
+**Default Apache Page:**  
+<img width="915" height="632" alt="DefaultApache" src="https://github.com/user-attachments/assets/333eaa98-1519-4b1f-982c-e7cc28d36cba" />  
+
+*Default Apache2 Ubuntu page confirming successful installation and web server is running*
+
+### Troubleshooting:  
+
+If page doesn't load, ensure NSG allows HTTP port 80.
+
+If firewall (UFW) is active:  
+
+sudo ufw allow 'Apache Full'  
+sudo ufw reload  
+
+---
+
+## Now Upload Website Files to VM:  
+
+### Using WinSCP  
+
+1. Open WinSCP (download from the website if needed)
+2. Fill in the connection details:
+   - **Host:** 51.103.214.199
+   - **Port:** 22
+   - **Username:** ryan
+   - **Protocol:** SCP
+3. Navigate to the Ubuntu directory
+4. Set **Remote directory:** `/tmp/`
+5. Drag `BricktopiaWebsitehtml` folder to `/tmp/`
+
+### Verify Upload in SSH  
+
+ls -l /tmp
+ls -l /tmp/BricktopiaWebsitehtml  
+
+
+### Screenshot References: 
+
+**WinSCP File Transfer Interface:**  
+  
+<img width="2136" height="1264" alt="WinSCP" src="https://github.com/user-attachments/assets/28b05646-ddfd-4f8c-a673-d57234a082d5" />  
+*WinSCP interface showing BricktopiaWebsitehtml folder being uploaded to /tmp/ directory*
+
+**File Located in temp folder**   
+
+<img width="2332" height="1204" alt="FileFoundTempFolder" src="https://github.com/user-attachments/assets/efcbb59e-741f-47ff-9552-adea3d9df85a" />  
+
+*BricktopiaWebsitehtml folder is located in /tmp/ directory*
+---
+
+## Move Files to Apache Root:  
+
+Once done, follow these commands to transfer the files safely:
+
+sudo rm -rf /var/www/html/*  
+sudo mv /tmp/BricktopiaWebsitehtml/* /var/www/html/  
+sudo chown -R www-data:www-data /var/www/html/  
+sudo chmod -R 755 /var/www/html/  
+sudo systemctl restart apache2  
+
+### Verify Files Are in Place:  
+
+ls /var/www/html/  
+
+**Files Successfully Transferred:**  
+
+<img width="2168" height="1204" alt="FilesTransferredProof" src="https://github.com/user-attachments/assets/0d5ef4ff-670f-4bf1-8831-292c15986609" />  
+
+*Terminal output confirming all website files successfully uploaded to to Apache Root*  
+
+Test website in browser: `http://51.103.214.199` – It will show the actual website
+
+**Website Accessible via Public IP:**  
+<img width="2880" height="1520" alt="WebsiteWithPublicIPOnly" src="https://github.com/user-attachments/assets/b8299e9f-5d8e-4596-af59-c9f58128be4c" />  
+
+*Bricktopia website successfully loaded using VM's public IP address*
+
+### Screenshot References:  
+
+**Home Page HTML Code:**  
+<img width="2880" height="1514" alt="IndexHTML" src="https://github.com/user-attachments/assets/3dbcb34b-9d98-4f81-bf89-e889e55004db" />  
+
+*Bricktopia Construction home page (index.html) code shown.*
+
+**About Us Page:**    
+
+<img width="2880" height="1518" alt="AboutUs" src="https://github.com/user-attachments/assets/d08ed369-71d1-40be-ac10-068f8de711e7" />  
+
+*About Us page (about.html) displaying company information*
+
+**Contact Page:**  
+
+<img width="2880" height="1522" alt="ContactUs" src="https://github.com/user-attachments/assets/cc08e69d-e8da-422b-aef5-450c7c58d36f" />  
+
+*Contact page (contact.html) with client inquiry form*
+
 ---
