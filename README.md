@@ -235,3 +235,37 @@ Test website in browser: `http://51.103.214.199` – It will show the actual web
 *Contact page (contact.html) with client inquiry form*
 
 ---
+
+## Phase 3 – Domain Setup (Namecheap) :
+
+### Configure DNS Records
+
+1. Log into Namecheap
+2. Add A records for your domain:
+
+| Host | Value | TTL |
+|------|-------|-----|
+| @ | 51.103.214.199 | Automatic |
+| www | 51.103.214.199 | Automatic |
+
+3. Wait for DNS propagation (usually minutes but it can take upto 1 hour)
+
+### Screenshot References: 
+
+**Namecheap Domain Dashboard:**  
+<img width="2880" height="1360" alt="NameCheapDashboard" src="https://github.com/user-attachments/assets/d9f23284-928b-4340-9daa-78f8e5658466" />  
+
+*Namecheap dashboard showing domain management interface*  
+
+**DNS Configuration:**  
+<img width="2702" height="1440" alt="DNSSetup" src="https://github.com/user-attachments/assets/84d33455-1479-4f1c-bca5-cbef3385a8a5" />  
+
+*Advanced DNS page showing A records configured to point to VM's public IP*  
+
+**Website Accessible via Domain:**  
+<img width="2880" height="1522" alt="DomainAndHTTPSAndSSL" src="https://github.com/user-attachments/assets/f99ae0b3-6ca0-4af0-94f5-9e38c7b6648b" />  
+
+*Bricktopia website successfully accessible through custom domain name*
+
+---  
+
