@@ -269,3 +269,42 @@ Test website in browser: `http://51.103.214.199` – It will show the actual web
 
 ---  
 
+## Phase 4 – Enable HTTPS with Certbot (Let's Encrypt) :
+
+### Install Certbot and Apache Plugin  
+
+sudo apt install certbot python3-certbot-apache -y  
+
+### Run Certbot  
+
+bash  
+sudo certbot --apache  
+
+### Follow Certbot Prompts  
+
+During the setup wizard:  
+
+1. **Enter email:** `ryanidiculathomas@gmail.com`  
+2. **Agree to terms**  
+3. **Select your domain**  
+4. **Redirect HTTP → HTTPS** (recommended)  
+
+### Test HTTPS  
+
+Visit in browser: `https://bricktopiabybonztomz.com`  
+
+It should display the lock icon showing a secure connection.
+
+### Screenshot References:  
+
+**HTTPS Certificate Valid:**  
+<img width="2880" height="1520" alt="LockCertificateValid" src="https://github.com/user-attachments/assets/4c95b955-1dc1-46d5-b06d-cec22602b71b" />  
+
+*Browser address bar showing padlock icon and valid SSL certificate from Let's Encrypt*
+
+### Verify Auto-Renewal  
+
+sudo systemctl status certbot.timer  
+
+---  
+
