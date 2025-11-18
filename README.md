@@ -11,6 +11,8 @@
 
 **Video Explainer:** https://drive.google.com/file/d/1pJR-a7VXIvRU2gYjr7I4LMRntGkXsYq1/view?usp=drive_link
 
+**Total Cost of Ownership IaaS vs SaaS for Bricktopia:** https://docs.google.com/presentation/d/1qeYOrkvIpI_5vhooB_WkcPY4JlZb2IIZ/edit?usp=sharing&ouid=117808669773860203887&rtpof=true&sd=true 
+
 ---
 
 ## Project Overview:  
