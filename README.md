@@ -9,7 +9,7 @@
 **Domain:** https://bricktopiabybonztomz.com  
 **Contact Email (for SSL):** ryanidiculathomas@gmail.com  
 
-**Video Explainer:** [BricktopiaVideoExplainer.mp4]
+**Video Explainer:** https://drive.google.com/file/d/1pJR-a7VXIvRU2gYjr7I4LMRntGkXsYq1/view?usp=drive_link
 
 ---
 
